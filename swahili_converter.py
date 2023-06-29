@@ -46,42 +46,41 @@ def number_to_swahili(n):
         else:
             return f'elfu {number_to_swahili(thousands)} {number_to_swahili(remainder)}'
 
-
 def swahili_to_number(string):
     swahili_numbers = {
-    "moja": 1,
-    "mbili": 2,
-    "tatu": 3,
-    "nne": 4,
-    "tano": 5,
-    "sita": 6,
-    "saba": 7,
-    "nane": 8,
-    "tisa": 9,
-    "kumi": 10,
-    "ishirini": 20,
-    "thelathini": 30,
-    "arobaini": 40,
-    "hamsini": 50,
-    "sitini": 60,
-    "sabini": 70,
-    "themanini": 80,
-    "tisini": 90,
-    "mia moja": 100,
-    "elfu moja": 1000,
-    "elfu kumi": 10000
+        "moja": 1,
+        "mbili": 2,
+        "tatu": 3,
+        "nne": 4,
+        "tano": 5,
+        "sita": 6,
+        "saba": 7,
+        "nane": 8,
+        "tisa": 9,
+        "kumi": 10,
+        "ishirini": 20,
+        "thelathini": 30,
+        "arobaini": 40,
+        "hamsini": 50,
+        "sitini": 60,
+        "sabini": 70,
+        "themanini": 80,
+        "tisini": 90,
+        "mia moja": 100,
+        "elfu moja": 1000,
+        "elfu kumi": 10000
     }
-    words = string.split()
+    words = string.lower().split()  # Convert the string to lowercase before splitting
     numerical_number = 0
 
-    if string in swahili_numbers:
-        return swahili_numbers[string]
+    if string.lower() in swahili_numbers:  # Check the lowercase version of the string in the dictionary
+        return swahili_numbers[string.lower()]
 
     if words[0] in ["kumi", "ishirini", "thelathini", "arobaini", "hamsini", "sitini", "sabini", "themanini", "tisini"]:
         if "na" in words:
             index = words.index("na")
             first_part = " ".join(words[:index])
-            second_part = words[index+1]
+            second_part = words[index + 1]
             if first_part in swahili_numbers and second_part in swahili_numbers:
                 numerical_number += swahili_numbers[first_part] + swahili_numbers[second_part]
                 return numerical_number
@@ -91,7 +90,7 @@ def swahili_to_number(string):
             second_word = words[1]
             if "na" in words:
                 index = words.index("na")
-                third_word = words[index+1]
+                third_word = words[index + 1]
                 if second_word in swahili_numbers and third_word in swahili_numbers:
                     numerical_number += swahili_numbers["mia moja"] * swahili_numbers[second_word] + swahili_numbers[third_word]
                     return numerical_number
@@ -105,7 +104,7 @@ def swahili_to_number(string):
             second_word = words[1]
             if "na" in words:
                 index = words.index("na")
-                third_word = words[index+1]
+                third_word = words[index + 1]
                 if second_word in swahili_numbers and third_word in swahili_numbers:
                     numerical_number += swahili_numbers["elfu moja"] * swahili_numbers[second_word] + swahili_numbers[third_word]
                     return numerical_number
