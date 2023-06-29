@@ -134,7 +134,7 @@ def main():
         st.write(f"Number: {result}")
 
     st.write("\n")  # Add vertical space
-    st.write("Created by Melinda Chebet and Oyori Obegi for Theory of Computation CAT 2 2023")
+    st.write("Created by **Melinda Chebet and Oyori Obegi** for Theory of Computation CAT 2 2023")
 
 
 if __name__ == "__main__":
