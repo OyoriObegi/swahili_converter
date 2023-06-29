@@ -115,8 +115,6 @@ def swahili_to_number(string):
 
     return None
 
-
-
 def main():
     st.title("Swahili Number Converter")
     st.write("The Swahili Number Converter app allows you to convert numerical numbers to Swahili words and vice versa. Enter a number or a Swahili word and select the corresponding input type.")
