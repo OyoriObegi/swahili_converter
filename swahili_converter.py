@@ -68,9 +68,14 @@ def swahili_to_number(s):
             else:
                 temp_result *= 1000
         elif word in swahili_numbers:
-            temp_result += swahili_numbers[word]
-    result += temp_result
+            temp_result = swahili_numbers[word]
+        
+        if temp_result is not None:
+            result += temp_result
+            temp_result = None
+
     return result
+
 
 def main():
     st.title("Swahili Number Converter")
