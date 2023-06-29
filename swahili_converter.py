@@ -21,7 +21,6 @@ swahili_numbers = {
     80: 'themanini',
     90: 'tisini',
 }
-
 def number_to_swahili(n):
     if n in swahili_numbers:
         return swahili_numbers[n]
@@ -35,17 +34,18 @@ def number_to_swahili(n):
     
     if n < 1000:
         hundreds, remainder = divmod(n, 100)
-        if remainder is None:
+        if remainder == 0:
             return f'mia {number_to_swahili(hundreds)}'
         else:
             return f'mia {number_to_swahili(hundreds)} na {number_to_swahili(remainder)}'
     
     if n < 10000:
         thousands, remainder = divmod(n, 1000)
-        if remainder is None:
+        if remainder == 0:
             return f'elfu {number_to_swahili(thousands)}'
         else:
-            return f'elfu {number_to_swahili(thousands)} na {number_to_swahili(remainder)}'
+            return f'elfu {number_to_swahili(thousands)} {number_to_swahili(remainder)}'
+    
 
 def swahili_to_number(s):
     number_mapping = {v: k for k, v in swahili_numbers.items()}
