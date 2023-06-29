@@ -74,7 +74,7 @@ def swahili_to_number(s):
 
 def main():
     st.title("Swahili Number Converter")
-    st.write("Enter a number or a Swahili word and convert between them.")
+    st.write("The Swahili Number Converter app allows you to convert numerical numbers to Swahili words and vice versa. Enter a number or a Swahili word and select the corresponding input type.")
 
     input_type = st.selectbox("Input Type:", ("Number", "Swahili Word"))
     user_input = st.text_input("Enter your input:")
@@ -90,8 +90,12 @@ def main():
         result = swahili_to_number(user_input)
         st.write(f"Number: {result}")
 
-    st.sidebar.write("Created by Melinda Chebet and Oyori Obegi for Theory of Computation CAT 2 2023")
+    st.write("\n")  # Add vertical space
+    st.write("Created by Melinda Chebet and Oyori Obegi for Theory of Computation CAT 2 2023")
 
 
 if __name__ == "__main__":
     main()
+
+
+
