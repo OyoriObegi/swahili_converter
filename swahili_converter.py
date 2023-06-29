@@ -46,34 +46,92 @@ def number_to_swahili(n):
         else:
             return f'elfu {number_to_swahili(thousands)} {number_to_swahili(remainder)}'
 
+import re
+
 def swahili_to_number(s):
-    number_mapping = {v: k for k, v in swahili_numbers.items()}
+    swahili_numbers = {
+        "moja": 1,
+        "mbili": 2,
+        "tatu": 3,
+        "nne": 4,
+        "tano": 5,
+        "sita": 6,
+        "saba": 7,
+        "nane": 8,
+        "tisa": 9,
+        "kumi": 10,
+        "ishirini": 20,
+        "thelathini": 30,
+        "arobaini": 40,
+        "hamsini": 50,
+        "sitini": 60,
+        "sabini": 70,
+        "themanini": 80,
+        "tisini": 90,
+        "mia": 100,
+        "elfu moja": 1000,
+        "elfu kumi": 10000
+    }
+
     words = s.split()
     result = 0
     temp_result = None
-    for word in words:
-        if word == "na":
-            continue
-        if word == "sifuri":
-            temp_result = 0
-        elif word == "mia":
+    for i, word in enumerate(words):
+        if word in swahili_numbers:
+            number = swahili_numbers[word]
             if temp_result is None:
-                temp_result = 100
+                temp_result = number
             else:
-                temp_result *= 100
-        elif word == "elfu":
-            if temp_result is None:
-                temp_result = 1000
+                temp_result += number
+        elif word.startswith("kumi") and i < len(words) - 1 and words[i + 1] != "na":
+            tens_word = word.replace("kumi", "")
+            tens = swahili_numbers[tens_word]
+            temp_result = tens
+        elif word.startswith("mia") and i < len(words) - 1:
+            next_word = words[i + 1]
+            if next_word == "na":
+                temp_result = 0
             else:
-                temp_result *= 1000
-        elif word in swahili_numbers:
-            temp_result = swahili_numbers[word]
-        
-        if temp_result is not None:
+                hundreds = swahili_numbers[word]
+                if next_word in swahili_numbers:
+                    ones = swahili_numbers[next_word]
+                    temp_result = hundreds + ones
+                elif next_word.startswith("kumi") and i < len(words) - 2 and words[i + 2] != "na":
+                    tens_word = next_word.replace("kumi", "")
+                    tens = swahili_numbers[tens_word]
+                    temp_result = hundreds + tens
+        elif word.startswith("elfu") and i < len(words) - 1:
+            next_word = words[i + 1]
+            if next_word == "na":
+                temp_result = 0
+            else:
+                thousands = swahili_numbers[word]
+                if next_word in swahili_numbers:
+                    ones = swahili_numbers[next_word]
+                    temp_result = thousands + ones
+                elif next_word.startswith("kumi") and i < len(words) - 2 and words[i + 2] != "na":
+                    tens_word = next_word.replace("kumi", "")
+                    tens = swahili_numbers[tens_word]
+                    temp_result = thousands + tens
+                elif next_word == "elfu" and i < len(words) - 2 and words[i + 2] != "na":
+                    next_next_word = words[i + 2]
+                    if next_next_word in swahili_numbers:
+                        ones = swahili_numbers[next_next_word]
+                        temp_result = thousands * 1000 + ones
+                    elif next_next_word.startswith("kumi") and i < len(words) - 3 and words[i + 3] != "na":
+                        tens_word = next_next_word.replace("kumi", "")
+                        tens = swahili_numbers[tens_word]
+                        temp_result = thousands * 1000 + tens
+
+        if temp_result is not None and temp_result >= 1000:
             result += temp_result
             temp_result = None
 
+    if temp_result is not None:
+        result += temp_result
+
     return result
+
 
 
 def main():
