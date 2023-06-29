@@ -45,7 +45,6 @@ def number_to_swahili(n):
             return f'elfu {number_to_swahili(thousands)}'
         else:
             return f'elfu {number_to_swahili(thousands)} {number_to_swahili(remainder)}'
-    
 
 def swahili_to_number(s):
     number_mapping = {v: k for k, v in swahili_numbers.items()}
