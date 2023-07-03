@@ -1,7 +1,7 @@
 import streamlit as st
 
 swahili_numbers = {
-    0: 'sifuri',
+    0: 'sufuri',
     1: 'moja',
     2: 'mbili',
     3: 'tatu',
