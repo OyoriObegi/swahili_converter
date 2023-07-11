@@ -65,7 +65,7 @@ def main():
     st.write("The Swahili Number Converter app allows you to convert numerical numbers to Swahili words and vice versa. Enter a number or a Swahili word and select the corresponding input type.")
 
     input_type = st.selectbox("Input Type:", ("Number", "Swahili Word"))
-    user_input = st.text_input("Enter your input:")
+    user_input = st.text_input("Enter your Input:")
 
     if input_type == "Number":
         try:
