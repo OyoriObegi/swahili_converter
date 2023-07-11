@@ -1,3 +1,3 @@
 # swahili_converter
 The Swahili Number Converter app allows you to convert numerical numbers to Swahili words and vice versa. Enter a number or a Swahili word and select the corresponding input type.
-Test the app [here: (https://swahiliconverter.streamlit.app/#swahili-number-converter)]
+Test the app here: [https://swahiliconverter.streamlit.app/#swahili-number-converter]
