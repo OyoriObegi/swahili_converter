@@ -17,7 +17,6 @@ The swahili_to_number function allows you to convert Swahili words back to numer
 
 4. *Error Handling:* Implement better error handling for invalid inputs or cases where the input does not match any known patterns.
 
-5. *Negative Number Support:* Add support for negative numbers in both directions.
 
 # Getting Started
 1. Install the required dependencies by running: pip install streamlit.
@@ -33,4 +32,4 @@ We welcome contributions to improve and extend the functionality of the Swahili 
 The Swahili Number Converter application was created for the Theory of Computation Class, 2023.
 
 
-Test the app here: [https://swahiliconverter.streamlit.app/#swahili-number-converter]
+Test the app [here](https://swahiliconverter.streamlit.app)
