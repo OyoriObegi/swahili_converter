@@ -1,7 +1,7 @@
 # Swahili Number Converter
 The Swahili Number Converter is a Python application that allows you to convert numerical numbers to their Swahili word representations and vice versa. The application is designed as a learning exercise for understanding Regular Expressions in Theory of Computing, a Computer Science Undergraduate Course.
 
-# How it WOrks
+# How it Works
 The application currently supports numerical numbers between 0 and 100, inclusive. It utilizes a set of predefined mappings in the swahili_numbers dictionary to convert numerical numbers to their corresponding Swahili words. For example, it can accurately convert numbers like 5, 20, 45, 60, and 100 to their respective Swahili word representations.
 
 For numbers less than 100, the application breaks them down into tens and ones, and then combines the Swahili word representations for these parts. For example, the number 45 is split into 40 (arobaini) and 5 (tano), and the application combines them as "arobaini na tano."
