@@ -30,7 +30,7 @@ The swahili_to_number function allows you to convert Swahili words back to numer
 We welcome contributions to improve and extend the functionality of the Swahili Number Converter. If you have any ideas or improvements, feel free to open an issue or submit a pull request.
 
 # Credits
-The Swahili Number Converter application was created by Melinda Chebet and Oyori Obegi for the Theory of Computation CAT 2 2023 assignment.
+The Swahili Number Converter application was created by Melinda Chebet and Oyori Obegi for the Theory of Computation Class, 2023.
 
 
 Test the app here: [https://swahiliconverter.streamlit.app/#swahili-number-converter]
