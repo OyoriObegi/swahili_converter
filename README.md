@@ -1,4 +1,4 @@
-# swahili_converter
+# Swahili Number Converter
 The Swahili Number Converter is a Python application that allows you to convert numerical numbers to their Swahili word representations and vice versa. The application is designed as a learning exercise for understanding Regular Expressions in Theory of Computing, a Computer Science Undergraduate Course.
 
 # How it WOrks
